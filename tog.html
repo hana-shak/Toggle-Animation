@@ -1,0 +1,100 @@
+<!--
+Part 2:
+Please write a pure JavaScript function that will toggle between hiding and showing an element with a smooth animation
+
+
+src ="https://www.youtube.com/watch?v=Y8n8LXgJ-98 "
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle</title>
+    <style type="text/css">
+          *{
+              margin:0;
+              padding:0;
+          } 
+
+          body{
+              font-family: Open Sans, Calibri, sanas-serfi;
+              font-weight:300;
+                    }
+        .container{
+            width:430px;
+            margin: 0 auto;
+            padding: 170px 0;
+        }
+
+        h1{
+            font-family: Cinzel, serfi;
+            font-weight:400;
+            font-size: 60px;;
+            line-height:55px;
+            color:#373f51;
+            margin-bottom: 50px;
+        }
+        .container p {
+            font-size: 16px;
+            color: #5ba4b0;
+            margin-bottom: 100px;
+        }
+        .qoute-btn{
+            display: block;
+            text-decoration: none;
+            padding: 12px 0;
+            color:#375f51;
+            background-color:#d8dbe2 ;
+            text-transform: uppercase;
+            font-size:14px ;
+            text-align: center;
+        }
+         .qoute-container blockquote {
+             display: none;
+             padding: 40px;
+             background-color: #58a4b0;
+             color: #fff;
+             font-size:24px;
+             font-style: italic;
+         }
+   
+   </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Slide Toggle Animation</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus iure praesentium quibusdam modi minima sit porro eius non ut. Id sapiente architecto fuga vel aut esse. Debitis consectetur repellendus dolorem.</p>
+    
+    <div class="qoute-container">
+        <a href="#" class="qoute-btn">Show more</a>
+        <blockquote>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti error debitis suscipit dolorum reiciendis eaque. Molestias, odit rem voluptatibus omnis ducimus laboriosam quia temporibus aliquam corrupti molestiae. Ipsam, consequatur ratione?</blockquote>
+    </div>
+        </div>
+
+
+        <!--/JS code/-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+        (function () {
+              var quotebutton =$('.qoute-btn'),
+                  blockquote = $('blockquote');
+
+
+            quotebutton.on('click', function(e) {
+                e.preventDefault();
+                var qoutebuttontext = quotebutton.text();
+                
+                blockquote.slideToggle(200, function() {
+                    qoutebuttontext == "Show more" ?  quotebutton.text("Show less") : quotebutton.text("Show more");
+                })
+
+            })
+                  
+
+        }) ();
+</script>
+</body>
+</html>
